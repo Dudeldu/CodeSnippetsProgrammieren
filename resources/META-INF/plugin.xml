@@ -1,0 +1,59 @@
+<idea-plugin>
+    <id>de.dhbw.karlsruhe.programmieren.code.snippets</id>
+    <name>Code Snippets Programmieren</name>
+    <version>1.1</version>
+    <vendor/>
+
+    <description>Collection of code-snippets for the "Programmieren" exam</description>
+
+    <change-notes>Adding snippets for IO, Threading and Dialogs and other UI components</change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="plugin_menu" text="Snippets" description="Code Snippets for exercises">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </group>
+        <group id="io-snippets" text="In-/ Output" description="Input/Output Snippets" popup="true">
+            <add-to-group group-id="plugin_menu" anchor="first"/>
+            <action id="append" class="IOActions" text="Append to document"
+                    description="Code for appending to document"/>
+            <action id="read_complete" class="IOActions" text="Read whole file" description="Code to read whole file"/>
+            <action id="read" class="IOActions" text="Read file" description="Code to read file"/>
+            <action id="write" class="IOActions" text="Write to file" description="Code to write into a file"/>
+        </group>
+        <group id="UIComponents" text="UI Components" description="Important UI-Components Snippets" popup="true">
+            <add-to-group group-id="plugin_menu" anchor="last"/>
+            <action id="UIComponents.JFrame" class="UIComponentsActions" text="Show JFrame"/>
+            <action id="UIComponents.JPanel" class="UIComponentsActions" text="Add new JPanel"/>
+            <action id="UIComponents.JButton" class="UIComponentsActions" text="Add new JButton"/>
+        </group>
+        <group id="JOptionDialogue" text="Dialogs" description="JoptionPane Dialog Snippets" popup="true">
+            <add-to-group group-id="plugin_menu" anchor="last"/>
+            <action id="Dialog.input" class="DialogActions" text="Input Dialog"/>
+            <action id="Dialog.options" class="DialogActions" text="Options Dialog"/>
+            <action id="Dialog.confirm" class="DialogActions" text="Confirm Dialog"/>
+            <action id="Dialog.message" class="DialogActions" text="Message Dialog"/>
+            <action id="Dialog.custom" class="DialogActions" text="Custom Dialog"/>
+        </group>
+        <group id="Threads" text="Threads" description="Thread/Runnable Snippets" popup="true">
+            <add-to-group group-id="plugin_menu" anchor="last"/>
+            <action id="Thread.startRunnable" class="ThreadActions" text="Start Runnable object"/>
+            <action id="Thread.newThread" class="ThreadActions" text="Start Thread"/>
+        </group>
+        <!-- Expand with other groups by add them to 'plugin_menu' group -->
+        <!-- Add various actions, connect them to new Java-class implementing the actionPerformed-method  -->
+        <!-- Example for new group:
+        <group id="Example" text="Example" description="Example Extension" popup="true">
+            <add-to-group group-id="plugin_menu" anchor="last"/>
+        </group>
+        -->
+    </actions>
+
+</idea-plugin>
