@@ -33,6 +33,7 @@
             <action id="UIComponents.JFrame" class="UIComponentsActions" text="Show JFrame"/>
             <action id="UIComponents.JPanel" class="UIComponentsActions" text="Add new JPanel"/>
             <action id="UIComponents.JButton" class="UIComponentsActions" text="Add new JButton"/>
+            <action id="UIComponents.JRadioButtons" class="UIComponentsActions" text="Add new Radiobutton group"/>
         </group>
         <group id="JOptionDialogue" text="Dialogs" description="JoptionPane Dialog Snippets" popup="true">
             <add-to-group group-id="plugin_menu" anchor="last"/>

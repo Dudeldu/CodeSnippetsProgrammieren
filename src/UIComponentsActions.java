@@ -51,10 +51,29 @@ public class UIComponentsActions extends AnAction {
         }else if(this.toString().contains("JPanel")){
             code = "JPanel jpanel = new JPanel()\n" +
                     "//jpanel.setLayout(new GridLayout(row, col));";
-        }else if(this.toString().contains("JButton")){
+        }else if(this.toString().contains("JButton")) {
             code = "JButton jbutton = new JButton(text)\n" +
                     "jbutton.addActionListener(e -> {/*Do something*/} );\n" +
                     "jpanel.add(jbutton)";
+        }else if(this.toString().contains("Radiobutton")){
+            code = "        JPanel radio = new JPanel();\n" +
+                    "\n" +
+                    "        JRadioButton option1 = new JRadioButton(\"OPTION 1\", true);\n" +
+                    "        JRadioButton option2 = new JRadioButton(\"OPTION 2\");\n" +
+                    "        JRadioButton option3 = new JRadioButton(\"OPTION 3\");\n" +
+                    "        option1.addActionListener(this);\n" +
+                    "        option2.addActionListener(this);\n" +
+                    "        option3.addActionListener(this);\n" +
+                    "\n" +
+                    "        ButtonGroup group = new ButtonGroup();\n" +
+                    "        group.add(option1);\n" +
+                    "        group.add(option2);\n" +
+                    "        group.add(option3);\n" +
+                    "\n" +
+                    "        radio.setLayout(new FlowLayout());\n" +
+                    "        radio.add(option1);\n" +
+                    "        radio.add(option2);\n" +
+                    "        radio.add(option3);";
         }
         //Insert final codesnippet
         String finalCode = code;
